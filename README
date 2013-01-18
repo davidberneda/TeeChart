@@ -1,4 +1,5 @@
-TeeChart module for Node.js
+TeeChart Javascript charting, module for Node.js and jQuery plugin.
+
 Steema Software www.steema.com
 ==============================
 
@@ -9,8 +10,8 @@ For TeeChart Javascript demos, documentation, support:
 
 http://www.steema.com/teechart/html5/
 
-Dependencies:
--------------
+Node.js Dependencies:
+---------------------
 
 To create and render a chart picture at server-side,
 an HTML5 <canvas> node library is required.
@@ -28,6 +29,9 @@ Installation:
 -Install node-canvas module:
  http://github.com/LearnBoost/node-canvas
 
+Or:
+
+npm install teechart
 
 Running included example:
 -------------------------
@@ -48,11 +52,13 @@ The important bits of code are:
 1) Using TeeChart and node-canvas modules:
 
   var tee=require('./lib/teechart-min.js'),
+
       Canvas=require('./node-canvas/lib/canvas.js');
 
 2) Creating a Tee.Chart, passing the canvas:
 
   var canvas = new Canvas(500,300),
+
       chart = new tee.Tee.Chart(canvas);
 
 3) Manually specifying chart size (this step should not
@@ -63,13 +69,17 @@ The important bits of code are:
 4) Add chart series, data, change formatting, etc, and DRAW:
 
   chart.title.text="Node.js and TeeChart";
+
   chart.addSeries(new tee.Tee.Bar([5,3,7,1,2]));
+
   chart.draw();
 
 5) Return the chart as image, or save it to a file, etc
    (Check node-canvas documentation for more options)
 
   res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end("<html><body><img src='"+canvas.toDataURL()+"'/></body></html>");
+
+  res.end("&lt;html&gt;&lt;body&gt;&lt;img src='"+canvas.toDataURL()+"'/&gt;&lt;/body&gt;&lt;/html&gt;");
+
 
 
