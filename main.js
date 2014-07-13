@@ -1,4 +1,4 @@
-var tee=require('./lib/teechart-min.js'),
+var tee=require('./lib/teechart.js'),
     Canvas=require('./node-canvas/lib/canvas.js'),
     http = require('http'),
     count=0;
