@@ -1,9 +1,9 @@
 {
-  "author": "David Berneda <david@steema.com> (http://www.steema.com)",
+  "author": "David Berneda <david@steema.com> (https://www.steema.com)",
   "name": "TeeChart",
   "description": "Charting and graphing node.js module",
   "tags" : ["html5", "canvas", "chart", "graph", "plot", "visualization"],
-  "version": "0.1.4",
+  "version": "3.0.0",
   "keywords": [
     "canvas",
     "w3c",
@@ -15,25 +15,30 @@
     "2d",
     "javascript"
   ],
-  "homepage": "http://www.steema.com/teechart/html5",
+  "homepage": "https://www.steema.com/product/html5",
   "repository": {
-    "url": "http://github.com/davidberneda/TeeChart.git"
+    "url": "https://github.com/davidberneda/TeeChart.git"
   },
   "maintainers": [
     {
       "name": "david berneda",
       "email": "david@steema.com",
-      "url": "http://steema.com"
+      "url": "https://www.steema.com"
+    },
+	{
+      "name": "steema developer",
+      "email": "developer@steema.com",
+      "url": "https://www.steema.com"
     }
   ],
   "bugs" : {
-    "email": "david@steema.com",
-    "url" : "http://github.com/davidberneda/TeeChart/issues"
+    "email": "info@steema.com",
+    "url" : "https://github.com/Steema/TeeChart-JavaScript/issues"
   },
   "licenses": [
     {
       "type": "CC",
-      "url": "http://github.com/davidberneda/TeeChart/blob/master/LICENSE.txt"
+      "url": "https://github.com/davidberneda/TeeChart/blob/master/LICENSE.txt"
     }
   ],
   "main" : "./main",

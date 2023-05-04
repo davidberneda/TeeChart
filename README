@@ -1,15 +1,15 @@
 
 TeeChart Javascript charting, module for Node.js and jQuery plugin.
 
-Steema Software http://www.steema.com
+Steema Software https://www.steema.com
 =====================================
 
 Charting module using TeeChart for JavaScript.
 Free for non-commercial use. See license.txt.
-
+ 
 For TeeChart Javascript demos, documentation, support:
 
-http://www.steema.com/teechart/html5/
+https://www.steema.com/product/html5
 
 Node.js Dependencies:
 ---------------------
@@ -25,10 +25,10 @@ Installation:
 -------------
 
 -Install node.js:
- http://nodejs.org
+ https://nodejs.org
 
 -Install node-canvas module:
- http://github.com/LearnBoost/node-canvas
+ https://github.com/LearnBoost/node-canvas
 
 Or:
 
