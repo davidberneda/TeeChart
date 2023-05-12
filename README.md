@@ -2,7 +2,8 @@
 TeeChart Javascript charting, module for Node.js and jQuery plugin.
 
 Steema Software https://www.steema.com
-=====================================
+
+---
 
 Charting module using TeeChart for JavaScript.
 Free for non-commercial use. See license.txt.
@@ -11,77 +12,76 @@ For TeeChart Javascript demos, documentation, support:
 
 https://www.steema.com/product/html5
 
-Node.js Dependencies:
----------------------
+## Node.js Dependencies
 
 To create and render a chart picture at server-side,
-an HTML5 <canvas> node library is required.
+an HTML5 `<canvas>` node library is required.
 
 TeeChart has been tested on Linux using node.js and
 node-canvas module.
 
 
-Installation:
--------------
+## Installation
 
--Install node.js:
+- Install node.js:
  https://nodejs.org
 
--Install node-canvas module:
+- Install node-canvas module:
  https://github.com/LearnBoost/node-canvas
 
 Or:
 
+```bash
 npm install teechart
+```
 
-Running included example:
--------------------------
+### Running included example
 
-# node main.js
+```bash
+node main.js
+```
 
-This small javascript code will accept requests via web to
-return an image/png sample chart:
+This small javascript code will accept requests via web to return an image/png sample chart:
 
 http://127.0.0.1:4242
 
 
-Notes:
-------
+### Notes
 
 The important bits of code are:
 
 1) Using TeeChart and node-canvas modules:
+ ```js
+  var tee = require('./lib/teechart.js'),
 
-  var tee=require('./lib/teechart.js'),
+  Canvas = require('./node-canvas/lib/canvas.js');
+ ```
 
-      Canvas=require('./node-canvas/lib/canvas.js');
+2) Creating a `Tee.Chart`, passing the canvas:
+```js
+var canvas = new Canvas(500,300),
 
-2) Creating a Tee.Chart, passing the canvas:
+chart = new tee.Tee.Chart(canvas);
+```
 
-  var canvas = new Canvas(500,300),
-
-      chart = new tee.Tee.Chart(canvas);
-
-3) Manually specifying chart size (this step should not
-   be mandatory in future releases) :
-
-     chart.bounds.set(0,0,500,300);
+3) Manually specifying chart size (this step should not be mandatory in future releases) :
+```js
+chart.bounds.set(0,0,500,300);
+```
 
 4) Add chart series, data, change formatting, etc, and DRAW:
+```js 
+chart.title.text="Node.js and TeeChart";
 
-  chart.title.text="Node.js and TeeChart";
+chart.addSeries(new tee.Tee.Bar([5,3,7,1,2]));
 
-  chart.addSeries(new tee.Tee.Bar([5,3,7,1,2]));
-
-  chart.draw();
+chart.draw();
+```
 
 5) Return the chart as image, or save it to a file, etc
    (Check node-canvas documentation for more options)
+```js
+res.writeHead(200, {'Content-Type': 'text/html'});
 
-  res.writeHead(200, {'Content-Type': 'text/html'});
-
-  res.end("<html><body><img src='"+canvas.toDataURL()+"'/></body></html>");
-
-
-
-=======
+res.end("<html><body><img src='"+canvas.toDataURL()+"'/></body></html>");
+```
